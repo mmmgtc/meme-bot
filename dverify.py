@@ -34,7 +34,6 @@ async def generate_send_login_link(ctx):
     await ctx.respond(
         f"Beep boop, I'm the friendly memes.party bot! 👋 🤖 \nBy logging in with the link below the memes you upload to the Gitcoin meme channels will magically be uploaded to memes.party! 🎺 \n{generated_url}\nHappy memeing!",
         ephemeral=True)
-    # await ctx.send("Please remember to finish the login process which involves going to the link and signing in with your Web3 Wallet. Just going the link is not enough! If you are already signed in please sign out and use the provided link again!", ephemeral=True)
 
 
 async def check_user_status(ctx):

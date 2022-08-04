@@ -7,11 +7,7 @@ from api import get_stats
 intents = discord.Intents.default()
 intents.message_content = True
 
-# bot = discord.Client(intents=intents)
-
 bot = discord.Bot(intents=intents)
-
-# print(dir(bot))
 
 
 @bot.event
@@ -59,27 +55,9 @@ async def on_message(message):
 
 @bot.event
 async def on_reaction_add(reaction, user):
-    # print("some reaction")
     message = reaction.message
     if user != bot.user:
         bot.loop.create_task(handle_upvote(user, message))
-        # print("message dir")
-        # print(dir(message))
-        # print(message.id)
-        # print(message.content)
-
-        # print(dir(reaction))
-        # # print(user)
-        # print(dir(user))
-        # if str(reaction.emoji) == "➡️":
-        #     #fetch new results from the Spotify API
-        #     bot.loop.create_task(handle_upvote(user, message))
-        #     # token = await get_user_token(user)
-        #     # print(token)
-        #     print('user right')
-        # if str(reaction.emoji) == "⬅️":
-        #     #fetch new results from the Spotify API
-        #     print('user left')
 
 
 bot.run(DISCORD_TOKEN)
